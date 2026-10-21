@@ -67,5 +67,37 @@
     font-size: 12px;
   }
 }
+  
+/* Animated purple neon background */
+body {
+  background: linear-gradient(
+    -45deg,
+    #070711,
+    #19082b,
+    #100a25,
+    #240b3d
+  );
+  background-size: 400% 400%;
+  animation: purpleGalaxy 14s ease infinite;
+}
+
+@keyframes purpleGalaxy {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Purple neon glow on cards */
+.hero-copy h1,
+.section-heading h2 {
+  text-shadow: 0 0 18px #a855f755;
+}
+
+/* Purple neon buttons */
+.btn-primary,
+.hero .btn-primary {
+  background: linear-gradient(135deg, #d17aff, #7c3aed);
+  box-shadow: 0 0 22px #a855f755;
+}
 </style>
 </body></html>
