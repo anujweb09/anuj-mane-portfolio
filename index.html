@@ -99,5 +99,89 @@ body {
   background: linear-gradient(135deg, #d17aff, #7c3aed);
   box-shadow: 0 0 22px #a855f755;
 }
+  
+/* Animated purple neon background */
+body {
+  position: relative;
+  isolation: isolate;
+  background: #070711;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 40%,
+      rgba(168, 85, 247, 0.24),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 80% 60%,
+      rgba(99, 102, 241, 0.22),
+      transparent 42%
+    ),
+    linear-gradient(
+      120deg,
+      #070711,
+      #19082b,
+      #100a25,
+      #240b3d
+    );
+
+  background-size: 200% 200%;
+  animation: purpleGalaxy 14s ease-in-out infinite;
+}
+
+@keyframes purpleGalaxy {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Flowing neon light trails */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 47%,
+    rgba(168, 85, 247, 0.10) 49%,
+    rgba(217, 70, 239, 0.22) 50%,
+    transparent 52%,
+    transparent 100%
+  );
+
+  background-size: 250% 250%;
+  animation: lightTrails 18s linear infinite;
+}
+
+@keyframes lightTrails {
+  from {
+    background-position: 100% 100%;
+  }
+  to {
+    background-position: -100% -100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
 </style>
 </body></html>
